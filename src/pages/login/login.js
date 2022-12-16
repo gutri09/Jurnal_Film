@@ -7,7 +7,6 @@ import {useNavigate} from "react-router-dom";
 const Login = () => {
     const navigate = useNavigate()
     const handleSubmit = async (event) => {
-      event.preventDefault();
       const data = new FormData(event.currentTarget);
       console.log({
         email: data.get('email'),
@@ -29,7 +28,7 @@ const Login = () => {
         localStorage.setItem('id', response.data.id)
         localStorage.setItem('user', response.data.user)
         localStorage.setItem('email', response.data.email)
-        navigate('/profile')
+        navigate('/')
         // jika berhasil, set localStorage 'user' dan 'token' serta redirect ke halaman profile
       }catch(e){
         // jika gagal, tampilkan alert 'Login Gagal'
