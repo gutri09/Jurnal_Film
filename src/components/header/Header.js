@@ -36,7 +36,7 @@ export default function Header() {
         const verifikasi = async () => {
           try {
             const response = await axios.post(
-              "https://modul17gutri-rahmad-zuwa-production.up.railway.app/verify",
+              "http://backend-jurnalfilm-production-9afa.up.railway.app/verify",
               {
                 token: localStorage.getItem("token"),
               }

@@ -9,20 +9,20 @@ const AvatarLogin = () => {
     // State untuk mengecek apakah user sudah login atau belum
     const [isLogin, setIsLogin] = React.useState(false)
     const [user, setUser] = React.useState({
-        id: 1,
+        id_users: 1,
         name: 'MHadi',
         email: 'm.hadi@gmail.com'
     })
     React.useEffect(() => {
         // 1. Ambil data user dari localstorage
           const user = localStorage.getItem('username');
-          const id = localStorage.getItem('id');
+          const id_users = localStorage.getItem('id_users');
           const email = localStorage.getItem('email');
           let token = localStorage.getItem('token');
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verifikasi = async()=> {
           try {
-            const response = await axios.post(`https://modul17gutri-rahmad-zuwa-production.up.railway.app/verify`, {token : token})
+            const response = await axios.post(`http://backend-jurnalfilm-production-9afa.up.railway.app/verify`, {token : token})
             console.log(localStorage.getItem('token'))
             if (response.status === 200){
               setIsLogin(true)
@@ -36,10 +36,10 @@ const AvatarLogin = () => {
         }
         // panggil fungsi verifikasi token di bawah sini
         verifikasi()
-        // 3. Lakukan setUser dengan data user yang didapat dari localstorage
+        // 3. Lakukan setUser dengan data user yang did_usersapat dari localstorage
         setUser( existingValues => ({
           ...existingValues,
-          id: localStorage.getItem('id'),
+          id_users: localStorage.getItem('id_users'),
           name: localStorage.getItem('user'),
           email: localStorage.getItem('email')
         }));
@@ -48,12 +48,12 @@ const AvatarLogin = () => {
     const handleLogout = async () => {
         // 1. Hapus localStorage
         localStorage.removeItem('user');
-        localStorage.removeItem('id');
+        localStorage.removeItem('id_users');
         localStorage.removeItem('email');
 
-        // 2. Hit endpoint logout dengan body jwt yang didapat dari localstorage
+        // 2. Hit endpoint logout dengan body jwt yang did_usersapat dari localstorage
         //   dan setelah berhasil, beri alert sukses
-        await axios.post(`https://modul17gutri-rahmad-zuwa-production.up.railway.app/logout`, {
+        await axios.post(`http://backend-jurnalfilm-production-9afa.up.railway.app/logout`, {
             token: localStorage.getItem('token')
         })
         .then((res) => {
@@ -73,7 +73,7 @@ const AvatarLogin = () => {
                         <img src={User} class="w-8" />
                         <span class="ml-4 text-white">{user.name}</span>
                     </button>
-                    <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                    <ul class="dropdown-menu absolute hid_usersden text-gray-700 pt-1">
                         <li class=""><a class="rounded-t bg-red-300 hover:bg-red-500 py-2 px-4 block whitespace-no-wrap" href="/profile">Settings</a></li>
                         <li class=""><button onClick={handleLogout} class="rounded-b bg-red-300 hover:bg-red-500 py-2 px-4 block whitespace-no-wrap pr-8">Logout</button></li>
 

@@ -19,14 +19,14 @@ const Login = () => {
        // Tambahkan kode di bawah ini untuk mengambil data dari localstorage
       // 1. Lakukan Axios POST ke backend pada endpoint /login di bawah ini,
       // dengan parameter 'email' dan 'pass' yang didapat dari form (clue ada pada line 23 dan 24).
-        const response = await axios.post(`https://modul17gutri-rahmad-zuwa-production.up.railway.app/login`,{
+        const response = await axios.post(`http://backend-jurnalfilm-production-9afa.up.railway.app/login`,{
         email: data.get('email'),
         password: data.get('password')
          })
         console.log(response.data)
         // simpan 'token' dan 'user' ke localStorage
         localStorage.setItem('token', response.data.token)
-        localStorage.setItem('id', response.data.id)
+        localStorage.setItem('id_users', response.data.id_users)
         localStorage.setItem('user', response.data.user)
         localStorage.setItem('email', response.data.email)
         navigate('/')
