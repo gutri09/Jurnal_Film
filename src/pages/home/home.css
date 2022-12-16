@@ -1,0 +1,128 @@
+.posterImage{
+    height: 100%;
+    filter: brightness(30%);
+}
+
+.posterImage > img {
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+.posterImage__overlay {
+    top:55%;
+    position: absolute;
+    padding: 5rem;
+    bottom: 0px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-image: linear-gradient(rgb(0,0,0,0), rgb(0,0,0,1));
+    opacity: 1;
+    transition: opacity .3s;
+}   
+
+.posterImage__overlay:hover {
+    opacity: 1;
+}
+
+.posterImage__title {
+    margin-top:0.9rem;
+    font-weight: 900;
+    font-size: 4rem;
+    text-align: left;
+    width: 70%;
+}
+
+.posterImage__runtime {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.posterImage__rating {
+    margin-left: 3rem;
+}
+
+.posterImage__description {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    text-align: left;
+    width: 50%;
+}
+.posterImage_small{ 
+    position: relative;
+    width:20%;
+    left: 75%;
+    bottom: 70%;
+    box-shadow: 0px 4px 44px -1px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 4px 44px -1px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 4px 44px -1px rgba(0,0,0,0.55);
+}
+.posterImage_small img{
+    border-radius:20px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .posterImage__title{
+        font-size:0.4rem;
+    }
+    .posterImage__runtime{
+        font-size:0.3rem;
+    }
+    .posterImage__rating{
+        margin-left: 1rem;
+    }
+    .posterImage__description{
+        font-size: 0.2rem;
+    }
+    .posterImage_small{
+        bottom: 60px;
+    }
+    .posterImage_small img{
+        border-radius:5px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .posterImage__title{
+        font-size:1.5rem;
+    }
+    .posterImage__runtime{
+        font-size:0.7rem;
+    }
+    .posterImage__rating{
+        margin-left: 2rem;
+    }
+    .posterImage__description{
+        font-size: 0.5rem;
+    }
+    .posterImage_small{
+        bottom: 140px;
+    }
+    .posterImage_small img{
+        border-radius:5px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px){
+    .posterImage__title{
+        font-size:2rem;
+    }
+    .posterImage__runtime{
+        font-size:1rem;
+    }
+    .posterImage__rating{
+        margin-left: 2rem;
+    }
+    .posterImage__description{
+        font-size: 0.8rem;
+    }
+    .posterImage_small{
+        bottom: 200px;
+    }
+    .posterImage_small img{
+        border-radius:10px;
+    }
+}
