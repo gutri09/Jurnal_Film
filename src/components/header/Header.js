@@ -36,7 +36,7 @@ export default function Header() {
         const verifikasi = async () => {
           try {
             const response = await axios.post(
-              "https://modul17gutri-rahmad-zuwa-production.up.railway.app/verify",
+              `${process.env.REACT_APP_BACKEND_URL}/verify`,
               {
                 token: localStorage.getItem("token"),
               }
